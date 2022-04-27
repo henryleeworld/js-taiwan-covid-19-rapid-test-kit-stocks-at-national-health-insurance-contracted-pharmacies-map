@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta property="og:title" content="台灣健保特約藥局武漢肺炎（新型冠狀病毒）家用快篩試劑庫存地圖" />
+        <meta property="og:description" content="快篩實名制上路希望讓更多有需要的民眾買得到平價的實名制家用快篩試劑，平抑市售家用快篩試劑售價，以利控制疫情，並維護民眾健康之權益。" />
+        <meta property="og:locale" content="zh_TW" />
+        <meta property="og:type" content="website" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ol3/4.6.5/ol.css" type="text/css" />
+        <link rel="stylesheet" href="css/ol3-sidebar.min.css" type="text/css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" integrity="sha512-GQGU0fMMi238uA+a/bdWJfpUGKUkBdgfFdgBm72SUQ6BeyWjoY/ton0tEjH+OSH9iP4Dfh+7HM0I9f5eR0L/4w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/dark-hive/jquery-ui.min.css" crossorigin="anonymous" />
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/dark-hive/theme.min.css" crossorigin="anonymous" />
+        <link rel="stylesheet" href="css/rapid-test-kit-stocks.css" type="text/css" />
+        <title>台灣健保特約藥局武漢肺炎（新型冠狀病毒）家用快篩試劑庫存地圖</title>
+    </head>
+    <body>
+        <div id="sidebar" class="sidebar collapsed">
+            <div class="sidebar-tabs">
+                <ul role="tablist">
+                    <li>
+                        <a href="#home" role="tab"><i class="fa-solid fa-bars"></i></a>
+                    </li>
+                    <li>
+                        <a href="#book" role="tab"><i class="fa-solid fa-book"></i></a>
+                    </li>
+                    <li>
+                        <a href="#settings" role="tab"><i class="fa-solid fa-gear"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/henryleeworld/js-taiwan-covid-19-rapid-test-kit-stocks-at-national-health-insurance-contracted-pharmacies-map" role="tab" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="sidebar-content">
+                <div class="sidebar-pane" id="home">
+                    <h1 class="sidebar-header">
+                        <span id="sidebarTitle">請點選地圖中的點</span><span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
+                    </h1>
+                    <div id="sidebarContent">請點選地圖中的點</div>
+                    <div class="btn-group-vertical" role="group" style="width: 100%;">
+                        <a href="https://github.com/henryleeworld/js-taiwan-covid-19-rapid-test-kit-stocks-at-national-health-insurance-contracted-pharmacies-map/issues" target="_blank" class="btn btn-primary btn-lg btn-block">
+                            網站問題反應
+                        </a>
+                    </div>
+                </div>
+                <div class="sidebar-pane" id="book">
+                    <h1 class="sidebar-header">
+                        <span id="weekTitle">說明</span><span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
+                    </h1>
+                    <div>
+                        圖示說明：
+                        <ul>
+                            <li><span style="color: #ccc;">▲</span>：目前沒有資料，無法判斷庫存情況</li>
+                            <li><span style="color: #48c774;">▲</span>：家用快篩 > 100</li>
+                            <li><span style="color: #ffdd57;">▲</span>：家用快篩 > 40</li>
+                            <li><span style="color: #fc82b1;">▲</span>：家用快篩 > 20</li>
+                            <li><span style="color: #f00;">▲</span>：家用快篩 <= 20</li>
+                            <li>藍色圓點：你目前所在位置（需要同意網站授權）</li>
+                        </ul>
+                        <img src="images/policy.jpg" style="width: 100%;" />
+                        注意事項：
+                        <ul>
+                            <li>部分藥局因採發放號碼牌方式，方便民眾購買，因目前無法顯示顯示已發送號碼牌數量。若看到剩餘數量，請先電洽藥局</li>
+                            <li>庫存數量僅供參考，實際庫存仍以個別單位現場為準</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sidebar-pane" id="settings">
+                    <h1 class="sidebar-header">
+                        <span id="weekTitle">設定</span><span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
+                    </h1>
+                    <div>
+                        <a href="#" class="btn btn-primary btn-lg btn-block" id="btn-geolocation">回到目前位置</a>
+                        <p><hr /></p>
+                        <div class="card">
+                            <h5 class="card-title">搜尋</h5>
+                            <div class="form-group">
+                                <label for="findPoint">名稱或代號</label>
+                                <input type="text" id="findPoint" name="findPoint" class="form-control" />
+                            </div>
+                        </div>
+                        <p><hr /></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="map" class="sidebar-map"></div>
+        <script src="js/routie.min.js" type="text/javascript" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ol3/4.6.5/ol.js" type="text/javascript" defer></script>
+        <script src="js/ol5-sidebar.min.js" type="text/javascript" defer></script>
+        <script src="js/rapid-test-kit-stocks.js" type="text/javascript" defer></script>
+    </body>
+</html>

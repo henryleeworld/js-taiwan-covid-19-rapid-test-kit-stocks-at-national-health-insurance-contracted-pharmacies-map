@@ -11,8 +11,8 @@ $ git clone
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/dU4jZMI.png)
+![](https://i.imgur.com/8ymoADU.png)
 > 地圖上會顯示各地藥局的庫存量，避免白跑一趟
 
-![](https://i.imgur.com/0AjEUqX.png)
+![](https://i.imgur.com/hXzEX0Q.png)
 > 資料取自健保署提供家用快篩試劑數量資料
